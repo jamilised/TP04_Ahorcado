@@ -15,9 +15,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        //Ahorcado.DefinirPalabra();
-        return View("ViewBag.PalabraOculta");
+        return View();
     }
+    
 
 
 }

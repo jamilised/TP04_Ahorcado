@@ -13,21 +13,21 @@ public static class Ahorcado
         Intentos = 0;
     }
 
-    public static void ProcesarPalabra(string palabra)
+    public static bool ProcesarPalabra(string palabra)
     {
         palabra = palabra.ToLower();
+        bool gano = false;
 
         if (palabra == PalabraOculta)
         {
-            Gano();
-        } else 
-        {
-            Perdio(); //De ultima es un controller / view
+            gano = true;
         }
         Intentos++;
+        return gano;
     }
-    public static void ProcesarLetra(string letraEnString)
+    public static bool ProcesarLetra(string letraEnString)
     {
+        bool gano = false;
         letraEnString = letraEnString.ToLower();
         char letra = char.Parse(letraEnString);
 
@@ -44,19 +44,11 @@ public static class Ahorcado
 
         if (Posiciones.Count() == PalabraOculta.Length)
         {
-            Gano(); //De ultima es un controller / view
+            gano = true;
         }
+        return gano;
     }
 
-    private static void Gano()
-    {
-
-    }
-
-    private static void Perdio()
-    {
-
-    }
 
     private static string DefinirPalabra()
     {
