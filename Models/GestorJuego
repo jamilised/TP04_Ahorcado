@@ -1,0 +1,56 @@
+namespace TP04_Ahorcado.Models;
+
+public class GestorJuego
+{
+    public string PalabraOculta { get; private set; }
+    public int Intentos { get; private set; }
+    public List<char> palabrasUsadasBien { get; private set; }
+    public List<char> palabrasUsadasMal { get; private set; }
+
+    public GestorJuego()
+    {        
+    }
+
+    private static string DefinirPalabra()
+    {
+        List<string> listaPalabrasPosibles = new List<string>();
+        listaPalabrasPosibles.Add("ajedrez");
+        listaPalabrasPosibles.Add("brujeria");
+        listaPalabrasPosibles.Add("camaleon");
+        listaPalabrasPosibles.Add("delfin");
+        listaPalabrasPosibles.Add("escalera");
+        listaPalabrasPosibles.Add("fantasma");
+        listaPalabrasPosibles.Add("guitarra");
+        listaPalabrasPosibles.Add("helicoptero");
+        listaPalabrasPosibles.Add("igualmente");
+        listaPalabrasPosibles.Add("jazmin");
+        listaPalabrasPosibles.Add("koala");
+        listaPalabrasPosibles.Add("laberinto");
+        listaPalabrasPosibles.Add("murcielago");
+        listaPalabrasPosibles.Add("nube");
+        listaPalabrasPosibles.Add("orquidea");
+        listaPalabrasPosibles.Add("pinguino");
+        listaPalabrasPosibles.Add("relojero");
+        listaPalabrasPosibles.Add("sandwich");
+        listaPalabrasPosibles.Add("tarantula");
+        listaPalabrasPosibles.Add("unicornio");
+        listaPalabrasPosibles.Add("viajero");
+        listaPalabrasPosibles.Add("yacimiento");
+        listaPalabrasPosibles.Add("hamster");
+        listaPalabrasPosibles.Add("abedul");
+        listaPalabrasPosibles.Add("biblioteca");
+        listaPalabrasPosibles.Add("caracol");
+        listaPalabrasPosibles.Add("deporte");
+        listaPalabrasPosibles.Add("elefante");
+        listaPalabrasPosibles.Add("frontera");
+        listaPalabrasPosibles.Add("globo");
+        listaPalabrasPosibles.Add("hielo");
+        listaPalabrasPosibles.Add("jungla");
+        listaPalabrasPosibles.Add("leon");
+
+        Random rd = new Random();
+        int rand_num = rd.Next(0, 32);
+        return listaPalabrasPosibles[rand_num];
+    }
+
+}
