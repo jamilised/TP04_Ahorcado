@@ -17,7 +17,31 @@ public class HomeController : Controller
     {
         return View();
     }
-    
+
+    public IActionResult ProcesarLetra(string letra)
+    {
+        if (Ahorcado.ProcesarLetra(letra))
+        {
+            return View("Final");
+        }
+        else
+        {
+            return View("Juego");
+        }
+    }
+    public IActionResult ProcesarPalabra(string palabra)
+    {
+        if (Ahorcado.ProcesarPalabra(palabra))
+        {
+            ViewBag.ResultadoFinal = "true";
+        }
+        else
+        {
+            ViewBag.ResultadoFinal = "false";
+        }
+        return View("Final", "ViewBag.ResultadoFinal");
+    }
+
 
 
 }
