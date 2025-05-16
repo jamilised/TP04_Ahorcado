@@ -8,10 +8,14 @@ public class GestorJuego
     public List<char> palabrasUsadasMal { get; private set; }
 
     public GestorJuego()
-    {        
+    {
     }
 
-    private static string DefinirPalabra()
+    public static void Juego()
+    {
+
+    }
+    public static string DefinirPalabra()
     {
         List<string> listaPalabrasPosibles = new List<string>();
         listaPalabrasPosibles.Add("ajedrez");
