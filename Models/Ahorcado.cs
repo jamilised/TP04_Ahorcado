@@ -7,6 +7,11 @@ public static class Ahorcado
     public static List<char> letrasUsadasBien { get; private set; }
     public static List<char> letrasUsadasMal { get; private set; }
 
+    public static void Guiones()
+    {
+        //Metodo para mostrar los guiones en la view (?)
+    }
+
     public static void Inicializar()
     {
         PalabraOculta = DefinirPalabra();
@@ -33,12 +38,21 @@ public static class Ahorcado
 
         List<int> Posiciones = new List<int>();
 
+        bool seEncontroLaLetraAunqueSeaEnUnaPosicion = false;
         for (int i = 0; i < PalabraOculta.Length; i++)
         {
             if (letra == PalabraOculta[i])
             {
                 Posiciones.Add(i);
+                seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
             }
+        }
+        if(seEncontroLaLetraAunqueSeaEnUnaPosicion)
+        {
+            letrasUsadasBien.Add(letra);
+        } else
+        {
+            letrasUsadasMal.Add(letra);
         }
         Intentos++;
 

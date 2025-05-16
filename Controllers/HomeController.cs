@@ -22,6 +22,9 @@ public class HomeController : Controller
     {
         if (Ahorcado.ProcesarLetra(letra))
         {
+            ViewBag.Intentos = Ahorcado.Intentos;
+            ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
+            ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
             return View("Final");
         }
         else
@@ -31,15 +34,7 @@ public class HomeController : Controller
     }
     public IActionResult ProcesarPalabra(string palabra)
     {
-        if (Ahorcado.ProcesarPalabra(palabra))
-        {
-            ViewBag.ResultadoFinal = "true";
-        }
-        else
-        {
-            ViewBag.ResultadoFinal = "false";
-        }
-        return View("Final", "ViewBag.ResultadoFinal");
+        return View("Final");
     }
 
 
