@@ -15,13 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.PalabraOculta = GestorJuego.DefinirPalabra();
-        return View("ViewBag.PalabraOculta");
-    }
-
-    public IActionResult ArriesgarLetra(String letra)
-    {
-        
+        //Ahorcado.DefinirPalabra();
         return View("ViewBag.PalabraOculta");
     }
 

@@ -1,21 +1,64 @@
 namespace TP04_Ahorcado.Models;
 
-public class GestorJuego
+public static class Ahorcado
 {
-    public string PalabraOculta { get; private set; }
-    public int Intentos { get; private set; }
-    public List<char> palabrasUsadasBien { get; private set; }
-    public List<char> palabrasUsadasMal { get; private set; }
+    public static string PalabraOculta { get; private set; }
+    public static int Intentos { get; private set; }
+    public static List<char> letrasUsadasBien { get; private set; }
+    public static List<char> letrasUsadasMal { get; private set; }
 
-    public GestorJuego()
+    public static void Inicializar()
     {
+        PalabraOculta = DefinirPalabra();
+        Intentos = 0;
     }
 
-    public static void Juego()
+    public static void ProcesarPalabra(string palabra)
+    {
+        palabra = palabra.ToLower();
+
+        if (palabra == PalabraOculta)
+        {
+            Gano();
+        } else 
+        {
+            Perdio(); //De ultima es un controller / view
+        }
+        Intentos++;
+    }
+    public static void ProcesarLetra(string letraEnString)
+    {
+        letraEnString = letraEnString.ToLower();
+        char letra = char.Parse(letraEnString);
+
+        List<int> Posiciones = new List<int>();
+
+        for (int i = 0; i < PalabraOculta.Length; i++)
+        {
+            if (letra == PalabraOculta[i])
+            {
+                Posiciones.Add(i);
+            }
+        }
+        Intentos++;
+
+        if (Posiciones.Count() == PalabraOculta.Length)
+        {
+            Gano(); //De ultima es un controller / view
+        }
+    }
+
+    private static void Gano()
     {
 
     }
-    public static string DefinirPalabra()
+
+    private static void Perdio()
+    {
+
+    }
+
+    private static string DefinirPalabra()
     {
         List<string> listaPalabrasPosibles = new List<string>();
         listaPalabrasPosibles.Add("ajedrez");
