@@ -15,6 +15,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        ViewBag.PalabraOculta = Ahorcado.PalabraElegida();
+        return ("ViewBag.PalabraOculta");
     }
+    public IActionResult ArriesgarLetra(String letra)
+    {
+        
+    }
+
+
 }
