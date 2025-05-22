@@ -4,9 +4,19 @@
              
 @if(@ViewBag.ResultadoJuego)
 {
-    <h1>¡Ganaste!</h1>
-    <img src="/Imagenes/@ViewBag.infoDatosDiscoBuscado.foto">
+    <h2>¡Ganaste!</h1>
+    <img src="Imagenes\Ganaste.gif">
+} else
+{
+    <h2>Perdiste..</h1>
+    <img src="Imagenes\Perdiste.gif">
 }
 
+<h4>Palabra: @ViewBag.PalabraOculta</h4>
 
-<!-- <h6>Género: @ViewBag.infoDatosDiscoBuscado.genero</h6> -->
+<div>
+    <h5>Letras Utilizadas:</h5>
+    <p></p>
+</div>
+
+<h6>Intentos: @ViewBag.Intentos</h6>

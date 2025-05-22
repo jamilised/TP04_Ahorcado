@@ -32,7 +32,6 @@ public class HomeController : Controller
             ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
             ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
             ViewBag.guiones = 0;
-            ViewBag.ResultadoJuego = true;
             return View("Final");
         }
         else
@@ -43,7 +42,6 @@ public class HomeController : Controller
     public IActionResult ProcesarPalabra(string palabra)
     {
         ViewBag.PalabraOculta = palabra;
-        ViewBag.ResultadoJuego = Ahorcado.ProcesarPalabra(palabra);
         return View("Final");
     }
 
