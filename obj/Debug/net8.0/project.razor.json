@@ -19339,6 +19339,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\49089410\\Downloads\\TP04_Ahorcado\\Views\\Home\\Final.cshtml",
+      "TargetPath": "Views\\Home\\Final.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\49089410\\Downloads\\TP04_Ahorcado\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -19351,6 +19356,11 @@
     {
       "FilePath": "c:\\Users\\49089410\\Downloads\\TP04_Ahorcado\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\49089410\\Downloads\\TP04_Ahorcado\\Views\\Home\\Juego.cshtml",
+      "TargetPath": "Views\\Home\\Juego.cshtml",
       "FileKind": "mvc"
     }
   ],

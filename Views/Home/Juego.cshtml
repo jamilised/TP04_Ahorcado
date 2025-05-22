@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Ahorcado";
+}
+
+<div>
+    <h5>@ViewBag.guiones</h5>
+    <h2>Letras utilizadas: 
+        @foreach(int i in ViewBag.letrasUsadasBien.Count)
+         {
+            <h2>@ViewBag.letrasUsadasBien[i]</h2>
+
+         }
+    </h2>
+    <p>Bienvenidos al sitio web de NombreProyecto</p>
+</div>
