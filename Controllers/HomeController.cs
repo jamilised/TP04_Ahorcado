@@ -15,7 +15,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Ahorcado.Inicializar();
         return View();
+    }
+
+    public IActionResult IniciarJuego()
+    {
+        return View("Juego");
     }
 
     public IActionResult ProcesarLetra(string letra)
