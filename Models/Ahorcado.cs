@@ -13,7 +13,7 @@ public static class Ahorcado
         Intentos = 0;
         
     }
-        public static string ObtenerPalabraParcial()
+    public static string ObtenerPalabraParcial()
     {
         string resultado = "";
 

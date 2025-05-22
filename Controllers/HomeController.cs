@@ -23,7 +23,7 @@ public class HomeController : Controller
     {
         return View("Juego");
     }
-
+[HttpPost]
     public IActionResult ProcesarLetra(string letra)
     {
         if (Ahorcado.ProcesarLetra(letra))
@@ -31,7 +31,8 @@ public class HomeController : Controller
             ViewBag.Intentos = Ahorcado.Intentos;
             ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
             ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
-            ViewBag.guiones = 0;
+            ViewBag.guiones = Ahorcado.ObtenerPalabraParcial();
+            ViewBag.ResultadoJuego = true;
             return View("Final");
         }
         else
@@ -42,6 +43,7 @@ public class HomeController : Controller
     public IActionResult ProcesarPalabra(string palabra)
     {
         ViewBag.PalabraOculta = palabra;
+        ViewBag.ResultadoJuego = Ahorcado.ProcesarPalabra(palabra);
         return View("Final");
     }
 

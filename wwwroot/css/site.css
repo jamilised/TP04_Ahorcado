@@ -9,11 +9,52 @@ html {
   }
 }
 
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
+header{
+  width: 100%;
+  display: inline-block;
+}
+
+footer {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid rgb(207, 207, 199);
+}
+
 body {
   margin: 10px;
   padding: 10px;
 }
 
+header nav ul li a{
+  text-decoration: none;
+  color: rgb(184, 184, 174);
+}
+
+nav ul li{
+    list-style: none;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    padding: 0.5%;
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    background-color: #000000;
+    box-shadow: 2px 5px 10px #b1b1ae;
+    font-style: bold;
+
+}
+
+h1{
+  text-decoration: underline;
+  margin: 1%;
+}
 
 footer {
   margin-top: 10px;
