@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Disco";
+}             
+             
+@if(@ViewBag.ResultadoJuego)
+{
+    <h1>¡Ganaste!</h1>
+    <img src="/Imagenes/@ViewBag.infoDatosDiscoBuscado.foto">
+}
+
+
+<!-- <h6>Género: @ViewBag.infoDatosDiscoBuscado.genero</h6> -->
