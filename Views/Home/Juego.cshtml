@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Ahorcado";
+}
+
+<div>
+    <h5>@ViewBag.guiones</h5>
+    <h2>Letras utilizadas: 
+    @if (ViewBag.letrasUsadasBien != null)
+    {
+        foreach (char letra in ViewBag.letrasUsadasBien)
+        {
+        @letra
+        }
+    }
+    @if (ViewBag.letrasUsadasMal != null)
+    {
+        foreach (char letra in ViewBag.letrasUsadasMal)
+        {
+            @letra
+        }
+    }
+    </h2>
+    <h2>Intentos: @ViewBag.Intentos</h2>
+    <h4>Nueva letra</h4>
+    <form action='@Url.Action("ProcesarLetra", "Home")' method="POST">
+    <input type="text" name="letra"/>
+    <input type="submit" value="Probar letra"/>
+    </form>
+    
+</div>

@@ -4,13 +4,14 @@ public static class Ahorcado
 {
     public static string PalabraOculta { get; private set; }
     public static int Intentos { get; private set; }
-    public static List<char> letrasUsadasBien { get; private set; }
-    public static List<char> letrasUsadasMal { get; private set; }
+    public static List<char> letrasUsadasBien { get; set; } = new List<char>();
+    public static List<char> letrasUsadasMal { get; set; } = new List<char>();
 
     public static void Inicializar()
     {
         PalabraOculta = DefinirPalabra();
         Intentos = 0;
+        
     }
     public static string ObtenerPalabraParcial()
     {
