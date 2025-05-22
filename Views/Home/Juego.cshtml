@@ -4,12 +4,19 @@
 
 <div>
     <h5>@ViewBag.guiones</h5>
-    <h2>Letras utilizadas: 
-        @foreach(int i in ViewBag.letrasUsadasBien.Count)
-         {
-            <h2>@ViewBag.letrasUsadasBien[i]</h2>
-
-         }
-    </h2>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <h2>Letras utilizadas: </h2>
+    @if (ViewBag.letrasUsadasBien != null)
+    {
+        foreach (char letra in ViewBag.letrasUsadasBien)
+        {
+        <h2>@letra</h2>
+        }
+    }
+    <h2>Intentos: @ViewBag.Intentos</h2>
+    <h4>Nueva letra</h4>
+    <form action='@Url.Action("ProcesarLetra", "Home")' method="POST">
+    <input type="text" name="letra"/>
+    <input type="submit" value="Probar letra"/>
+    </form>
+    
 </div>
