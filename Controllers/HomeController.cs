@@ -25,6 +25,7 @@ public class HomeController : Controller
             ViewBag.Intentos = Ahorcado.Intentos;
             ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
             ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
+            ViewBag.guiones = 0;
             return View("Final");
         }
         else
@@ -34,6 +35,7 @@ public class HomeController : Controller
     }
     public IActionResult ProcesarPalabra(string palabra)
     {
+        ViewBag.PalabraOculta = palabra;
         return View("Final");
     }
 

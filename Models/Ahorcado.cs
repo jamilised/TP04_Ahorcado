@@ -7,15 +7,32 @@ public static class Ahorcado
     public static List<char> letrasUsadasBien { get; private set; }
     public static List<char> letrasUsadasMal { get; private set; }
 
-    public static void Guiones()
-    {
-        //Metodo para mostrar los guiones en la view (?)
-    }
-
     public static void Inicializar()
     {
         PalabraOculta = DefinirPalabra();
         Intentos = 0;
+    }
+        public static string ObtenerPalabraParcial()
+    {
+        string resultado = "";
+
+        foreach (char letra in PalabraOculta)
+        {
+            bool encontrada = false;
+            foreach (char i in letrasUsadasBien)
+            {
+                if (letra == i)
+                {
+                    resultado += " " + letra + " ";
+                    encontrada = true;
+                }
+            }
+            if (!encontrada)
+            {
+                resultado += " _ ";
+            }
+        }
+        return resultado;
     }
 
     public static bool ProcesarPalabra(string palabra)
@@ -47,10 +64,11 @@ public static class Ahorcado
                 seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
             }
         }
-        if(seEncontroLaLetraAunqueSeaEnUnaPosicion)
+        if (seEncontroLaLetraAunqueSeaEnUnaPosicion)
         {
             letrasUsadasBien.Add(letra);
-        } else
+        }
+        else
         {
             letrasUsadasMal.Add(letra);
         }

@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = z:\2025\Programacion\TP04_Ahorcado\TP04_Ahorcado
 build_property._RazorSourceGeneratorDebug = 
 
+[z:/2025/Programacion/TP04_Ahorcado/TP04_Ahorcado/Views/Home/Final.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaW5hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [z:/2025/Programacion/TP04_Ahorcado/TP04_Ahorcado/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[z:/2025/Programacion/TP04_Ahorcado/TP04_Ahorcado/Views/Home/Juego.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxKdWVnby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [z:/2025/Programacion/TP04_Ahorcado/TP04_Ahorcado/Views/Shared/_Layout.cshtml]
