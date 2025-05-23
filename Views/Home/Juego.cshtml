@@ -4,15 +4,21 @@
 
 <div>
     <h3>@ViewBag.guiones</h3>
-    <h2>Letras utilizadas: 
+    <h2>Letras utilizadas: </h2>
     @if (ViewBag.letrasUsadasBien != null)
     {
         foreach (char letra in ViewBag.letrasUsadasBien)
         {
-           @letra
+           <h2> @letra </h2>
         }
     }
-    </h2>
+    @if (ViewBag.letrasUsadasMal != null)
+    {
+        foreach (char letra in ViewBag.letrasUsadasMal)
+        {
+           <p> @letra </p>
+        }
+    }
     <h2>Intentos: @ViewBag.Intentos</h2>
     <h4>Nueva letra</h4>
     <form action='@Url.Action("ProcesarLetra", "Home")' method="POST">
