@@ -41,6 +41,10 @@ public class HomeController : Controller
         }
         else
         {
+            ViewBag.Intentos = Ahorcado.Intentos;
+            ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
+            ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;
+            ViewBag.guiones = Ahorcado.ObtenerPalabraParcial();
             return View("Juego");
         }
     }
