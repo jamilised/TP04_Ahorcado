@@ -51,116 +51,125 @@ public static class Ahorcado
     {
         bool gano = false;
         letraEnString = letraEnString.ToLower();
-        char letra = char.Parse(letraEnString);
-
-        bool letraRepetida = false;
-
-        List<int> Posiciones = new List<int>();
-
-        bool seEncontroLaLetraAunqueSeaEnUnaPosicion = false;
-        foreach (char l in letrasUsadasBien)
+        char letra = 'a';
+        if (letraEnString.Length != 1)
         {
-            if (letra == l)
-            {
-                letraRepetida = true;
-            }
+            letra = char.Parse(letraEnString);
         }
-        foreach (char l in letrasUsadasMal)
+        else
         {
-            if (letra == l)
-            {
-                letraRepetida = true;
-            }
+            letra = letraEnString[0];
         }
-
-        if (!letraRepetida)
         {
-            for (int i = 0; i < PalabraOculta.Length; i++)
+            bool letraRepetida = false;
+
+            List<int> Posiciones = new List<int>();
+
+            bool seEncontroLaLetraAunqueSeaEnUnaPosicion = false;
+            foreach (char l in letrasUsadasBien)
             {
-                if (letra == PalabraOculta[i])
+                if (letra == l)
                 {
-                    Posiciones.Add(i);
-                    seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
+                    letraRepetida = true;
                 }
             }
-            if (seEncontroLaLetraAunqueSeaEnUnaPosicion)
+            foreach (char l in letrasUsadasMal)
             {
-                letrasUsadasBien.Add(letra);
-            }
-            else
-            {
-                letrasUsadasMal.Add(letra);
-            }
-            Intentos++;
-
-            bool todasEncontradas = true;
-
-            for (int i = 0; i < PalabraOculta.Length; i++)
-            {
-                char letraDeLaPalabra = PalabraOculta[i];
-                bool letraFueAdivinada = false;
-
-                foreach (char letraBuena in letrasUsadasBien)
+                if (letra == l)
                 {
-                    if (letraDeLaPalabra == letraBuena)
+                    letraRepetida = true;
+                }
+            }
+
+            if (!letraRepetida)
+            {
+                for (int i = 0; i < PalabraOculta.Length; i++)
+                {
+                    if (letra == PalabraOculta[i])
                     {
-                        letraFueAdivinada = true;
+                        Posiciones.Add(i);
+                        seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
                     }
                 }
-                if (!letraFueAdivinada)
+                if (seEncontroLaLetraAunqueSeaEnUnaPosicion)
                 {
-                    todasEncontradas = false;
+                    letrasUsadasBien.Add(letra);
+                }
+                else
+                {
+                    letrasUsadasMal.Add(letra);
+                }
+                Intentos++;
+
+                bool todasEncontradas = true;
+
+                for (int i = 0; i < PalabraOculta.Length; i++)
+                {
+                    char letraDeLaPalabra = PalabraOculta[i];
+                    bool letraFueAdivinada = false;
+
+                    foreach (char letraBuena in letrasUsadasBien)
+                    {
+                        if (letraDeLaPalabra == letraBuena)
+                        {
+                            letraFueAdivinada = true;
+                        }
+                    }
+                    if (!letraFueAdivinada)
+                    {
+                        todasEncontradas = false;
+                    }
+                }
+                if (todasEncontradas)
+                {
+                    gano = true;
                 }
             }
-            if (todasEncontradas)
-            {
-                gano = true;
-            }
+            return gano;
         }
-        return gano;
+
+
+        private static string DefinirPalabra()
+        {
+            List<string> listaPalabrasPosibles = new List<string>();
+            listaPalabrasPosibles.Add("ajedrez");
+            listaPalabrasPosibles.Add("brujeria");
+            listaPalabrasPosibles.Add("camaleon");
+            listaPalabrasPosibles.Add("delfin");
+            listaPalabrasPosibles.Add("escalera");
+            listaPalabrasPosibles.Add("fantasma");
+            listaPalabrasPosibles.Add("guitarra");
+            listaPalabrasPosibles.Add("helicoptero");
+            listaPalabrasPosibles.Add("igualmente");
+            listaPalabrasPosibles.Add("jazmin");
+            listaPalabrasPosibles.Add("koala");
+            listaPalabrasPosibles.Add("laberinto");
+            listaPalabrasPosibles.Add("murcielago");
+            listaPalabrasPosibles.Add("nube");
+            listaPalabrasPosibles.Add("orquidea");
+            listaPalabrasPosibles.Add("pinguino");
+            listaPalabrasPosibles.Add("relojero");
+            listaPalabrasPosibles.Add("sandwich");
+            listaPalabrasPosibles.Add("tarantula");
+            listaPalabrasPosibles.Add("unicornio");
+            listaPalabrasPosibles.Add("viajero");
+            listaPalabrasPosibles.Add("yacimiento");
+            listaPalabrasPosibles.Add("hamster");
+            listaPalabrasPosibles.Add("abedul");
+            listaPalabrasPosibles.Add("biblioteca");
+            listaPalabrasPosibles.Add("caracol");
+            listaPalabrasPosibles.Add("deporte");
+            listaPalabrasPosibles.Add("elefante");
+            listaPalabrasPosibles.Add("frontera");
+            listaPalabrasPosibles.Add("globo");
+            listaPalabrasPosibles.Add("hielo");
+            listaPalabrasPosibles.Add("jungla");
+            listaPalabrasPosibles.Add("leon");
+
+            Random rd = new Random();
+            int rand_num = rd.Next(0, 32);
+            return listaPalabrasPosibles[rand_num];
+        }
+
     }
-
-
-    private static string DefinirPalabra()
-    {
-        List<string> listaPalabrasPosibles = new List<string>();
-        listaPalabrasPosibles.Add("ajedrez");
-        listaPalabrasPosibles.Add("brujeria");
-        listaPalabrasPosibles.Add("camaleon");
-        listaPalabrasPosibles.Add("delfin");
-        listaPalabrasPosibles.Add("escalera");
-        listaPalabrasPosibles.Add("fantasma");
-        listaPalabrasPosibles.Add("guitarra");
-        listaPalabrasPosibles.Add("helicoptero");
-        listaPalabrasPosibles.Add("igualmente");
-        listaPalabrasPosibles.Add("jazmin");
-        listaPalabrasPosibles.Add("koala");
-        listaPalabrasPosibles.Add("laberinto");
-        listaPalabrasPosibles.Add("murcielago");
-        listaPalabrasPosibles.Add("nube");
-        listaPalabrasPosibles.Add("orquidea");
-        listaPalabrasPosibles.Add("pinguino");
-        listaPalabrasPosibles.Add("relojero");
-        listaPalabrasPosibles.Add("sandwich");
-        listaPalabrasPosibles.Add("tarantula");
-        listaPalabrasPosibles.Add("unicornio");
-        listaPalabrasPosibles.Add("viajero");
-        listaPalabrasPosibles.Add("yacimiento");
-        listaPalabrasPosibles.Add("hamster");
-        listaPalabrasPosibles.Add("abedul");
-        listaPalabrasPosibles.Add("biblioteca");
-        listaPalabrasPosibles.Add("caracol");
-        listaPalabrasPosibles.Add("deporte");
-        listaPalabrasPosibles.Add("elefante");
-        listaPalabrasPosibles.Add("frontera");
-        listaPalabrasPosibles.Add("globo");
-        listaPalabrasPosibles.Add("hielo");
-        listaPalabrasPosibles.Add("jungla");
-        listaPalabrasPosibles.Add("leon");
-
-        Random rd = new Random();
-        int rand_num = rd.Next(0, 32);
-        return listaPalabrasPosibles[rand_num];
-    }
-
 }
