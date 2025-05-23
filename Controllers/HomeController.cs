@@ -50,8 +50,8 @@ public class HomeController : Controller
     }
     public IActionResult ProcesarPalabra(string palabra)
     {
-        ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
-        ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;
+        ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
+        ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
         ViewBag.Intentos = Ahorcado.Intentos;
         ViewBag.ResultadoJuego = Ahorcado.ProcesarPalabra(palabra);
         ViewBag.PalabraOculta = palabra;
