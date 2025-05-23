@@ -65,13 +65,23 @@ footer {
   border-top: 1px solid #e9ecef;
 }
 
+.LetrasBienyMal p{
+  width: 3%;
+  margin-left: 48.5%;
+  margin-right: 48.5%;
+  margin-top: 0.5%;
+}
+
 .LetraUsadaBn{
   background-color: green;
+  border-radius: 50%;
 }
 
 .LetraUsadaMl{
   background-color: red;
+  border-radius: 50%;
 }
+
 
 /*
 .color1 {color: #2089d8;}
