@@ -4,11 +4,11 @@
              
 @if(@ViewBag.ResultadoJuego)
 {
-    <h2>¡Ganaste!</h1>
+    <h2>¡Ganaste!</h2>
     <img src="Imagenes\Ganaste.gif">
 } else
 {
-    <h2>Perdiste..</h1>
+    <h2>Perdiste..</h2>
     <img src="Imagenes\Perdiste.gif">
 }
 
@@ -16,7 +16,12 @@
 
 <div>
     <h5>Letras Utilizadas:</h5>
-    <p></p>
+    @foreach(char letra in LetrasUsadasBien){
+        <p class="LetraUsadaMl"> @letra </p>
+    }
+    @foreach(char letra in LetrasUsadasMal){
+        <p class="LetraUsadaBn"> @letra </p>
+    }
 </div>
 
 <h6>Intentos: @ViewBag.Intentos</h6>
