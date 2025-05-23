@@ -39,93 +39,103 @@ public static class Ahorcado
 
     public static bool ProcesarPalabra(string palabra)
     {
-        palabra = palabra.ToLower();
         bool gano = false;
-
-        if (palabra == PalabraOculta)
+        if (palabra != null)
         {
-            gano = true;
+            palabra = palabra.ToLower();
+
+
+            if (palabra == PalabraOculta)
+            {
+                gano = true;
+            }
+            Intentos++;
         }
-        Intentos++;
         return gano;
     }
     public static bool ProcesarLetra(string letraEnString)
     {
         bool gano = false;
-        letraEnString = letraEnString.ToLower();
-        char letra;
 
-        if (letraEnString.Length == 1)
+        if (letraEnString != null)
         {
-            letra = char.Parse(letraEnString);
-        }
-        else
-        {
-            letra = letraEnString[0];
-        }
 
-        bool letraRepetida = false;
 
-        List<int> Posiciones = new List<int>();
+            letraEnString = letraEnString.ToLower();
+            char letra;
 
-        bool seEncontroLaLetraAunqueSeaEnUnaPosicion = false;
-        foreach (char l in letrasUsadasBien)
-        {
-            if (letra == l)
+            if (letraEnString.Length == 1)
             {
-                letraRepetida = true;
-            }
-        }
-        foreach (char l in letrasUsadasMal)
-        {
-            if (letra == l)
-            {
-                letraRepetida = true;
-            }
-        }
-
-        if (!letraRepetida)
-        {
-            for (int i = 0; i < PalabraOculta.Length; i++)
-            {
-                if (letra == PalabraOculta[i])
-                {
-                    Posiciones.Add(i);
-                    seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
-                }
-            }
-            if (seEncontroLaLetraAunqueSeaEnUnaPosicion)
-            {
-                letrasUsadasBien.Add(letra);
+                letra = char.Parse(letraEnString);
             }
             else
             {
-                letrasUsadasMal.Add(letra);
+                letra = letraEnString[0];
             }
-            Intentos++;
 
-            bool todasEncontradas = true;
+            bool letraRepetida = false;
 
-            for (int i = 0; i < PalabraOculta.Length; i++)
+            List<int> Posiciones = new List<int>();
+
+            bool seEncontroLaLetraAunqueSeaEnUnaPosicion = false;
+            foreach (char l in letrasUsadasBien)
             {
-                char letraDeLaPalabra = PalabraOculta[i];
-                bool letraFueAdivinada = false;
-
-                foreach (char letraBuena in letrasUsadasBien)
+                if (letra == l)
                 {
-                    if (letraDeLaPalabra == letraBuena)
+                    letraRepetida = true;
+                }
+            }
+            foreach (char l in letrasUsadasMal)
+            {
+                if (letra == l)
+                {
+                    letraRepetida = true;
+                }
+            }
+
+            if (!letraRepetida)
+            {
+                for (int i = 0; i < PalabraOculta.Length; i++)
+                {
+                    if (letra == PalabraOculta[i])
                     {
-                        letraFueAdivinada = true;
+                        Posiciones.Add(i);
+                        seEncontroLaLetraAunqueSeaEnUnaPosicion = true;
                     }
                 }
-                if (!letraFueAdivinada)
+                if (seEncontroLaLetraAunqueSeaEnUnaPosicion)
                 {
-                    todasEncontradas = false;
+                    letrasUsadasBien.Add(letra);
                 }
-            }
-            if (todasEncontradas)
-            {
-                gano = true;
+                else
+                {
+                    letrasUsadasMal.Add(letra);
+                }
+                Intentos++;
+
+                bool todasEncontradas = true;
+
+                for (int i = 0; i < PalabraOculta.Length; i++)
+                {
+                    char letraDeLaPalabra = PalabraOculta[i];
+                    bool letraFueAdivinada = false;
+
+                    foreach (char letraBuena in letrasUsadasBien)
+                    {
+                        if (letraDeLaPalabra == letraBuena)
+                        {
+                            letraFueAdivinada = true;
+                        }
+                    }
+                    if (!letraFueAdivinada)
+                    {
+                        todasEncontradas = false;
+                    }
+                }
+                if (todasEncontradas)
+                {
+                    gano = true;
+                }
             }
         }
         return gano;

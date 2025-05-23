@@ -4,15 +4,15 @@
              
 @if(@ViewBag.ResultadoJuego)
 {
-    <h2>¡Ganaste!</h2>
+    <h2 class= "Ganaste">¡Ganaste!</h2>
     <img src="~/Imagenes/Ganaste.gif">
 } else
 {
-    <h2>Perdiste..</h2>
+    <h2 class="Perdiste">Perdiste..</h2>
     <img src="~/Imagenes/Perdiste.gif">
 }
 
-<h4>Palabra: @ViewBag.PalabraOculta</h4>
+<h5>Palabra: @ViewBag.PalabraOculta</h5>
 
 <div class="LetrasBienyMal">
     <h5>Letras Utilizadas:</h5>
