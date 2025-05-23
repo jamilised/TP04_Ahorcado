@@ -51,7 +51,7 @@ public static class Ahorcado
     {
         bool gano = false;
         letraEnString = letraEnString.ToLower();
-        char letra = 'a';
+        char letra;
         if (letraEnString.Length != 1)
         {
             letra = char.Parse(letraEnString);
