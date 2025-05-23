@@ -9,21 +9,24 @@
     {
         foreach (char letra in ViewBag.letrasUsadasBien)
         {
-           <h2> @letra </h2>
+           <p> @(letra + " ") </p>
         }
     }
     @if (ViewBag.letrasUsadasMal != null)
     {
         foreach (char letra in ViewBag.letrasUsadasMal)
         {
-           <p> @letra </p>
+           <p> @(letra + " ") </p>
         }
     }
     <h2>Intentos: @ViewBag.Intentos</h2>
-    <h4>Nueva letra</h4>
     <form action='@Url.Action("ProcesarLetra", "Home")' method="POST">
     <input type="text" name="letra"/>
     <input type="submit" value="Probar letra"/>
     </form>
     
+    <form action='@Url.Action("ProcesarPalabra", "Home")' method="POST">
+    <input type="text" name="palabra"/>
+    <input type="submit" value="Arriesgar Palabra"/>
+    </form>
 </div>
