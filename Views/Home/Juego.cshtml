@@ -9,6 +9,13 @@
     {
         foreach (char letra in ViewBag.letrasUsadasBien)
         {
+           <h2> @letra </h2>
+        }
+    }
+    @if (ViewBag.letrasUsadasMal != null)
+    {
+        foreach (char letra in ViewBag.letrasUsadasMal)
+        {
            <p> @letra </p>
         }
     }
