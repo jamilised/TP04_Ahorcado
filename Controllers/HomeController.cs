@@ -55,7 +55,7 @@ public class HomeController : Controller
         ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;
         ViewBag.Intentos = Ahorcado.Intentos;
         ViewBag.ResultadoJuego = Ahorcado.ProcesarPalabra(palabra);
-        ViewBag.PalabraOculta = palabra;
+        ViewBag.PalabraOculta = Ahorcado.PalabraOculta;
         return View("Final");
     }
 

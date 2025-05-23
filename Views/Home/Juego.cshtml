@@ -9,14 +9,14 @@
     {
         foreach (char letra in ViewBag.letrasUsadasBien)
         {
-           <p> @(letra + " ") </p>
+           <p class="LetraUsadaBn"> @(letra + " ") </p>
         }
     }
     @if (ViewBag.letrasUsadasMal != null)
     {
         foreach (char letra in ViewBag.letrasUsadasMal)
         {
-           <p> @(letra + " ") </p>
+           <p class="LetraUsadaMl"> @(letra + " ") </p>
         }
     }
     <h2>Intentos: @ViewBag.Intentos</h2>
