@@ -48,6 +48,7 @@ public class HomeController : Controller
             return View("Juego");
         }
     }
+    [HttpPost]
     public IActionResult ProcesarPalabra(string palabra)
     {
         ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
