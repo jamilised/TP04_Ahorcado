@@ -16,10 +16,10 @@
 
 <div>
     <h5>Letras Utilizadas:</h5>
-    @foreach(char letra in LetrasUsadasBien){
+    @foreach(char letra in ViewBag.LetrasUsadasBien){
         <p class="LetraUsadaMl"> @letra </p>
     }
-    @foreach(char letra in LetrasUsadasMal){
+    @foreach(char letra in ViewBag.LetrasUsadasMal){
         <p class="LetraUsadaBn"> @letra </p>
     }
 </div>
