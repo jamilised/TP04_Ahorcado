@@ -5,6 +5,8 @@
 <div>
     <h3>@ViewBag.guiones</h3>
     <h2>Letras utilizadas: </h2>
+    
+    <div class="LetrasBienyMal">
     @if (ViewBag.letrasUsadasBien != null)
     {
         foreach (char letra in ViewBag.letrasUsadasBien)
@@ -19,6 +21,7 @@
            <p class="LetraUsadaMl"> @(letra + " ") </p>
         }
     }
+    </div>
     <h2>Intentos: @ViewBag.Intentos</h2>
     <form action='@Url.Action("ProcesarLetra", "Home")' method="POST">
     <input type="text" name="letra"/>

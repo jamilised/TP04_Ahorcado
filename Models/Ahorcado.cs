@@ -11,6 +11,8 @@ public static class Ahorcado
     {
         PalabraOculta = DefinirPalabra();
         Intentos = 0;
+        letrasUsadasBien.Clear();
+        letrasUsadasMal.Clear();
 
     }
     public static string ObtenerPalabraParcial()

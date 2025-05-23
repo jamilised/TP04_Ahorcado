@@ -44,11 +44,12 @@ nav ul li{
     margin-left: 1%;
     margin-bottom: 3%;
     padding: 0.5%;
-    border: 1px solid rgb(139, 139, 139);
+    text-decoration: none;
+    border: 1px solid #2089d8;
     border-radius: 10px;
-    background-color: #000000;
-    box-shadow: 2px 5px 10px #b1b1ae;
-    font-style: bold;
+    background-color: #20afd8;
+    box-shadow: 2px 5px 10px #96e9e7;
+    color: black;
 }
 
 h1{
@@ -73,21 +74,58 @@ footer {
 }
 
 .LetraUsadaBn{
-  background-color: green;
+  background-color: rgb(157, 252, 157);
   border-radius: 50%;
 }
 
 .LetraUsadaMl{
-  background-color: red;
+  background-color: rgb(250, 144, 144);
   border-radius: 50%;
 }
 
+h5{
+  font-size: 1.5em;
+}
+
+#BotonComienzo{
+    margin-left: 1%;
+    margin-bottom: 3%;
+    padding: 0.5%;
+    text-decoration: none;
+    border: 1px solid #2089d8;
+    border-radius: 10px;
+    background-color: #20afd8;
+    box-shadow: 2px 5px 10px #96e9e7;
+}
+
+a{
+  color: black;
+  margin-top: 1.5%;
+}
+
+img{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  border-radius: 10%;
+}
+
+form{
+  margin: 1.99%;
+}
+form input{
+    margin-left: 1%;
+    margin-bottom: 3%;
+    padding: 0.5%;
+    text-decoration: none;
+    border: 1px solid #96e9e7;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
 
 /*
 .color1 {color: #2089d8;}
 .color2 {color: #20afd8;}
-.color3 {c
-color: #20afd8;}
+.color3 {color: #20afd8;}
 .color4 {color: #96e9e7;}
 .color5 {color: #f4efed;}
 */

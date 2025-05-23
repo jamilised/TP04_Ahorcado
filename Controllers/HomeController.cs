@@ -32,6 +32,7 @@ public class HomeController : Controller
     {
         if (Ahorcado.ProcesarLetra(letra))
         {
+            ViewBag.PalabraOculta = Ahorcado.PalabraOculta;
             ViewBag.Intentos = Ahorcado.Intentos;
             ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
             ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;

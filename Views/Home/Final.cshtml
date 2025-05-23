@@ -5,11 +5,11 @@
 @if(@ViewBag.ResultadoJuego)
 {
     <h2>¡Ganaste!</h2>
-    <img src="~Imagenes\Ganaste.gif">
+    <img src="~/Imagenes/Ganaste.gif">
 } else
 {
     <h2>Perdiste..</h2>
-    <img src="~Imagenes\Perdiste.gif">
+    <img src="~/Imagenes/Perdiste.gif">
 }
 
 <h4>Palabra: @ViewBag.PalabraOculta</h4>
@@ -24,6 +24,6 @@
     }
 </div>
 
-<h6>Intentos: @ViewBag.Intentos</h6>
+<h5>Intentos: @ViewBag.Intentos</h5>
 
  <a href='@Url.Action("Index", "Home")' id="BotonComienzo">Volver a Jugar</a>
