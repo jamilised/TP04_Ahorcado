@@ -16,7 +16,6 @@ public static class Ahorcado
     public static string ObtenerPalabraParcial()
     {
         string resultado = "";
-
         foreach (char letra in PalabraOculta)
         {
             bool encontrada = false;
