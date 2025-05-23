@@ -33,25 +33,21 @@ public class HomeController : Controller
         if (Ahorcado.ProcesarLetra(letra))
         {
             ViewBag.Intentos = Ahorcado.Intentos;
-            ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
-            ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
+            ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
+            ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;
             ViewBag.guiones = Ahorcado.ObtenerPalabraParcial();
             ViewBag.ResultadoJuego = true;
             return View("Final");
         }
         else
         {
-            ViewBag.Intentos = Ahorcado.Intentos;
-            ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
-            ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
-            ViewBag.guiones = Ahorcado.ObtenerPalabraParcial();
             return View("Juego");
         }
     }
     public IActionResult ProcesarPalabra(string palabra)
     {
-        ViewBag.letrasUsadasBien = Ahorcado.letrasUsadasBien;
-        ViewBag.letrasUsadasMal = Ahorcado.letrasUsadasMal;
+        ViewBag.LetrasUsadasBien = Ahorcado.letrasUsadasBien;
+        ViewBag.LetrasUsadasMal = Ahorcado.letrasUsadasMal;
         ViewBag.Intentos = Ahorcado.Intentos;
         ViewBag.ResultadoJuego = Ahorcado.ProcesarPalabra(palabra);
         ViewBag.PalabraOculta = palabra;
