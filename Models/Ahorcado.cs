@@ -1,13 +1,18 @@
 namespace TP04_Ahorcado.Models;
+using Newtonsoft.Json;
 
-public static class Ahorcado
+public class Ahorcado
 {
-    public static string PalabraOculta { get; private set; }
-    public static int Intentos { get; private set; }
-    public static List<char> letrasUsadasBien { get; set; } = new List<char>();
-    public static List<char> letrasUsadasMal { get; set; } = new List<char>();
+   [JsonProperty] 
+    public string PalabraOculta { get; private set; }
+    [JsonProperty]
+    public int Intentos { get; private set; }
+    [JsonProperty]
+    public List<char> letrasUsadasBien { get; set; } = new List<char>();
+    [JsonProperty]
+    public List<char> letrasUsadasMal { get; set; } = new List<char>();
 
-    public static void Inicializar()
+    public void Inicializar()
     {
         PalabraOculta = DefinirPalabra();
         Intentos = 0;
@@ -15,7 +20,7 @@ public static class Ahorcado
         letrasUsadasMal.Clear();
 
     }
-    public static string ObtenerPalabraParcial()
+    public string ObtenerPalabraParcial()
     {
         string resultado = "";
         foreach (char letra in PalabraOculta)
@@ -37,7 +42,7 @@ public static class Ahorcado
         return resultado;
     }
 
-    public static bool ProcesarPalabra(string palabra)
+    public bool ProcesarPalabra(string palabra)
     {
         bool gano = false;
         if (palabra != null)
@@ -53,7 +58,7 @@ public static class Ahorcado
         }
         return gano;
     }
-    public static bool ProcesarLetra(string letraEnString)
+    public bool ProcesarLetra(string letraEnString)
     {
         bool gano = false;
 
@@ -141,7 +146,7 @@ public static class Ahorcado
         return gano;
     }
 
-    private static string DefinirPalabra()
+    private string DefinirPalabra()
     {
         List<string> listaPalabrasPosibles = new List<string>();
         listaPalabrasPosibles.Add("ajedrez");
